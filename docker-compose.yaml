@@ -15,6 +15,7 @@ services:
       - TZ=Asia/Shanghai
     ports:
       - 3306:3306
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
     networks:
       - custom-local-net-2
   gin:

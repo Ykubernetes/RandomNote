@@ -23,4 +23,4 @@ docker-compose down
 
 docker-compose down --volumes --rmi all
 ```
-![]("https://github.com/Ykubernetes/RandomNote/templates/image-20230920220123504.png")
+![1]("https://github.com/Ykubernetes/RandomNote/templates/image-20230920220123504.png")

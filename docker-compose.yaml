@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  mysql:
+    restart: always
+    image: mysql:5.7.43
+    container_name: mysql
+    volumes:
+      - /data/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=shenfor
+      - MYSQL_USER=shenfor
+      - MYSQL_PASSWORD=shenfor
+      - TZ=Asia/Shanghai
+    ports:
+      - 3306:3306
+    networks:
+      - custom-local-net-2
+  gin:
+    container_name: ginserver
+    restart: always
+    image: wisdom2023/random_note:v0.2
+    ports:
+      - 8080:8080
+    networks:
+      - custom-local-net-2
+networks:
+  custom-local-net-2:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.25.64.0/18
+          gateway: 172.25.64.1

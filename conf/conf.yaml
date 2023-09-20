@@ -1,0 +1,16 @@
+dbmysql:
+  username: root
+  password: shenwei
+  host: 192.168.35.150
+  port: 3306
+  dbname: shenfor
+
+application:
+  timeout: 10s
+  charset: utf8mb4
+  parseTime: true
+  loc: Local
+
+ginserver:
+  host: 0.0.0.0
+  port: 8080

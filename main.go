@@ -1,15 +1,20 @@
 package main
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/random_note/conf"
 	"github.com/random_note/controller"
 	"github.com/random_note/dao"
 	"github.com/random_note/models"
+	"github.com/spf13/viper"
 )
 
 func main() {
 	// connect db
-	err := dao.InitMySQL()
+	//err := dao.InitMySQLByFile()
+	conf.LoadConfig()
+	err := dao.InitMySQLByViper()
 	if err != nil {
 		panic("failed to connect database")
 	}
@@ -29,6 +34,6 @@ func main() {
 		v1Group.PUT("/todo/:id", controller.UpdateTodo)
 		v1Group.DELETE("/todo/:id", controller.DeleteTodo)
 	}
-
-	r.Run(":8080")
+	serverPort := fmt.Sprintf("0.0.0.0:%s", viper.GetString("GINS_PORT"))
+	r.Run(serverPort)
 }

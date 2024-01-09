@@ -21,7 +21,7 @@ services:
   gin:
     container_name: ginserver
     restart: always
-    image: wisdom2023/random_note:v0.2
+    image: winston2024/random_note:v0.2
     ports:
       - 8080:8080
     networks:

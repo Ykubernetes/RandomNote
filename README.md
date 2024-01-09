@@ -33,22 +33,19 @@ docker-compose down --volumes --rmi all
 
 ```shell
 [winstom@iZwz9ex0psaa1la0j6i98wZ randnote]# docker pull winston2024/random_note:v0.2
-v0.2: Pulling from winston2024/random_note
-070eb51debd9: Pull complete 
-0d3f8b250258: Pull complete 
-0022922015bf: Pull complete 
-Digest: sha256:72eaf4532cec08f6fd7c2804cacca98a43d722decafa292ff873b2e562569f57
-Status: Downloaded newer image for winston2024/random_note:v0.2
-docker.io/winston2024/random_note:v0.2
 
 [winstom@iZwz9ex0psaa1la0j6i98wZ randnote]# docker pull mysql:5.7.43
-5.7.43: Pulling from library/mysql
-9ad776bc3934: Pull complete 
-9e4eda42c982: Pull complete 
-... ...
-Digest: sha256:4f9bfb0f7dd97739ceedb546b381534bb11e9b4abf013d6ad9ae6473fed66099
-Status: Downloaded newer image for mysql:5.7.43
-docker.io/library/mysql:5.7.43
 
+[winstom@iZwz9ex0psaa1la0j6i98wZ randnote]# docker-compose up -d
+[+] Running 4/4
+ ✔ gin 3 layers [⣿⣿⣿]      0B/0B      Pulled                                                                                                                                                                         32.0s 
+   ✔ 070eb51debd9 Pull complete                                                                                                                                                                                       7.5s 
+   ✔ a4b349635581 Pull complete                                                                                                                                                                                       2.2s 
+   ✔ 8d951f39600b Pull complete                                                                                                                                                                                      12.6s 
+[+] Building 0.0s (0/0)                                                                                                                                                                                     docker:default
+[+] Running 3/3
+ ✔ Network randnote_custom-local-net-2  Created                                                                                                                                                                       0.0s 
+ ✔ Container mysql                      Started                                                                                                                                                                       0.1s 
+ ✔ Container ginserver                  Started                  
 ```
 
